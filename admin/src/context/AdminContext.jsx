@@ -8,6 +8,7 @@ export const AdminContext = createContext()
 const AdminContextProvider = (props) => {
 
     const backendURL = import.meta.env.VITE_BACKEND_URL;
+    const adminPass = import.meta.env.VITE_ADMIN_PASS;
 
     const [products, setProducts] = useState([])
     const [orderedProduct, setOrderedProduct] = useState([])
@@ -38,7 +39,7 @@ const AdminContextProvider = (props) => {
 
     const getAllOrderedProduct = async (token) => {
 
-        console.log(token)
+       
 
         try {
 
@@ -78,6 +79,7 @@ const AdminContextProvider = (props) => {
         orderedProduct, setOrderedProduct,
         completedOrderProduct,
         token, setToken,
+        adminPass,
     }
 
     return (

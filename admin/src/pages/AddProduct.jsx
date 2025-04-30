@@ -5,8 +5,9 @@ import { AdminContext } from '../context/AdminContext'
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
+  
 
-  const { backendURL, token } = useContext(AdminContext);
+  const { backendURL, token,adminPass } = useContext(AdminContext);
 
   const [image1, setImage1] = useState(false)
   const [image2, setImage2] = useState(false)
@@ -24,6 +25,11 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const enrollment = prompt('Please Enter My Student Entrollment Number: ');
+    if(enrollment !== adminPass){
+      toast.error("Please Correct Details Otherwise contact me sartaj9806@gmail.com")
+      return
+    }
 
     try {
       const dataForm = new FormData();

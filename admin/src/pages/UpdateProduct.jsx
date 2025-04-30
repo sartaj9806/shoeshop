@@ -10,8 +10,8 @@ import axios from 'axios';
 
 const UpdateProduct = () => {
 
-  const { id }  = useParams()
-  const { backendURL, token } = useContext(AdminContext);
+  const { id } = useParams()
+  const { backendURL, token, adminPass } = useContext(AdminContext);
 
   const [product, setProduct] = useState('')
 
@@ -32,8 +32,8 @@ const UpdateProduct = () => {
     try {
 
       const { data } = await axios.get(`${backendURL}/api/product/get-single-product/${id}`, {
-        headers : {
-          Authorization : `Bearer ${token}`
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       })
       if (data.success) {
@@ -75,6 +75,12 @@ const UpdateProduct = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
 
+    const enrollment = prompt('Please Enter My Student Entrollment Number: ');
+    if (enrollment !== adminPass) {
+      toast.error("Please Correct Details Otherwise contact me sartaj9806@gmail.com")
+      return
+    }
+
     try {
 
       const dataForm = new FormData();
@@ -94,8 +100,8 @@ const UpdateProduct = () => {
       dataForm.append('image', image4)
 
       const { data } = await axios.put(`${backendURL}/api/product/update-product/${id}`, dataForm, {
-        headers : {
-          Authorization : `Bearer ${token}`
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       })
 

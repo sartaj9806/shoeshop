@@ -34,6 +34,7 @@ const Navbar = () => {
                     <NavLink className='hover:bg-white hover:text-black px-2 py-1  rounded-lg  ' to='/collection' >Collection</NavLink>
                     <NavLink className='hover:bg-white hover:text-black px-2 py-1  rounded-lg  ' to='/about' >About</NavLink>
                     <NavLink className='hover:bg-white hover:text-black px-2 py-1  rounded-lg  ' to='/contact' >Contact</NavLink>
+                    <a className='hover:bg-white hover:text-black px-2 py-1  rounded-lg  ' href='https://admin.shoeshop.a1sartaj.in/' rel= 'noopener noreferrer' target='_black' >Admin</a>
                 </ul>
 
                 <div className='flex gap-2 items-center'>

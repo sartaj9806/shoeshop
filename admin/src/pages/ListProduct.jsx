@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const ListProduct = () => {
 
-  const { products, backendURL, getAllProductData, token } = useContext(AdminContext);
+  const { products, backendURL, getAllProductData, token, adminPass } = useContext(AdminContext);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -14,6 +14,12 @@ const ListProduct = () => {
   }, [])
 
   const handleProductDelete = async (id) => {
+
+    const enrollment = prompt('Please Enter My Student Entrollment Number: ');
+    if (enrollment !== adminPass) {
+      toast.error("Please Correct Details Otherwise contact me sartaj9806@gmail.com")
+      return
+    }
 
     try {
 

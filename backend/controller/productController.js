@@ -108,27 +108,7 @@ export const updateProduct = async (req, res) => {
             oldProduct.image = imagesURL;
         }
 
-        // for (let imageUrl of oldProduct.image) {
-        //     const publicId = imageUrl.split('/').pop().split('.')[0];
-        //     await cloudinary.uploader.destroy(`shoeshop/${publicId}`)
-        // }
-
-
-
-        // if (req.files && req.files.length > 0) {
-        //     console.log(req.files[0].path || null) 
-        //     console.log(req.files[1].path || null) 
-        //     console.log(req.files[2].path || null) 
-        //     console.log(req.files[3].path || null) 
-        //     return ;
-        //     // const imagesURL = req.files.map(item => item === '' ? '' : item.path);
-        //     // oldProduct.image = imagesURL;
-
-        //     // oldProduct.image = req.files[0].path || '0';
-        //     // oldProduct.image = req.files[1].path || '0';
-        //     // oldProduct.image = req.files[2].path || '0';
-        //     // oldProduct.image = req.files[3].path || '0';
-        // }
+        
 
         oldProduct.name = name;
         oldProduct.description = description;
