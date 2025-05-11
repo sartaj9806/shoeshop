@@ -19,7 +19,7 @@ app.use(cors({
     credentials: true
 }))
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3100
 app.use(express.json())
 
 // MongoDB function 
